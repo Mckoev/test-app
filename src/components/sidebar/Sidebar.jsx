@@ -1,14 +1,16 @@
 import React from 'react'
 import './Sidebar.css'
+import BlockIcons from './BlockIcons'
+import { IconsUpper } from './icons/IconsUpper'
+import { IconsDown } from './icons/IconsDown'
 
 function Sidebar({ icons }) {
-  const listItems = icons.map((item) => (
-    <div className="icon_wrapper" key={item}>
-      <img src={item} className="wrapper"></img>
+  return (
+    <div className="sidebar">
+      <BlockIcons icons={IconsUpper} />
+      <BlockIcons icons={IconsDown} />
     </div>
-  ))
-
-  return <div className="sidebar">{listItems}</div>
+  )
 }
 
 export default Sidebar
