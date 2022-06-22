@@ -5,3 +5,49 @@
   background: linear-gradient(270deg, rgba(0, 0, 0, 0.072) 0%, rgba(255, 255, 255, 0) 10%);
   background-color: #f7f7f7;
 }
+
+.wrapper__market-agent {
+  margin-top: 20px;
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0.03em;
+  color: #3b3b3b;
+}
+
+.wrapper__market-processManager {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 160%;
+  letter-spacing: 0.2px;
+  color: #3b3b3b;
+}
+
+.wrapper__market-organizations {
+  background: #eeeeee;
+  width: 224px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.wrapper__market-organizations-img {
+  width: 20px;
+  height: 20px;
+}
+
+.wrapper__market-organizations-text {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #82b284;
+  margin-left: 12px;
+}

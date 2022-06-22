@@ -1,7 +1,7 @@
 import React from 'react'
 
-function Agent() {
-  return <div>Честный агент</div>
+function Agent({ agentName }) {
+  return <div className="wrapper__market-agent">{agentName}</div>
 }
 
 export default Agent
