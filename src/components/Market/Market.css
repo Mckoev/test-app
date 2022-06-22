@@ -1,4 +1,4 @@
-.wrapper__market {
+.wrapper__market-side {
   width: 224px;
   height: 900px;
   background-color: #f7f7f7;
@@ -6,7 +6,7 @@
   background-color: #f7f7f7;
 }
 
-.wrapper__market-agent {
+.wrapper__market-side-agent {
   margin-top: 20px;
   font-family: 'Proxima Nova';
   font-style: normal;
@@ -17,7 +17,7 @@
   color: #3b3b3b;
 }
 
-.wrapper__market-processManager {
+.wrapper__market-side-processManager {
   font-family: 'Proxima Nova';
   font-style: normal;
   font-weight: 400;
@@ -27,7 +27,7 @@
   color: #3b3b3b;
 }
 
-.wrapper__market-organizations {
+.wrapper__market-side-organizations {
   background: #eeeeee;
   width: 224px;
   height: 44px;
@@ -37,12 +37,12 @@
   margin-top: 20px;
 }
 
-.wrapper__market-organizations-img {
+.wrapper__market-side-organizations-img {
   width: 20px;
   height: 20px;
 }
 
-.wrapper__market-organizations-text {
+.wrapper__market-side-organizations-text {
   font-family: 'Proxima Nova';
   font-style: normal;
   font-weight: 600;
@@ -50,4 +50,11 @@
   line-height: 20px;
   color: #82b284;
   margin-left: 12px;
+}
+
+.marketHeader {
+  display: flex;
+  flex-direction: row;
+  width: 1168px;
+  height: 72px;
 }
