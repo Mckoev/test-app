@@ -53,8 +53,50 @@
 }
 
 .marketHeader {
+}
+
+.marketHeader__wrapper {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   width: 1168px;
   height: 72px;
+}
+
+.marketHeader__wrapper-title {
+  width: 292px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 40px;
+}
+
+.marketHeader__arrow {
+  width: 20px;
+  height: 20px;
+}
+
+.marketHeader__title {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #82b284;
+}
+
+.marketHeader__icons {
+  width: 108px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 40px;
+}
+
+.marketHeader__hr {
+  width: 1168px;
+  height: 0px;
+  border: 1px solid #e5e5e5;
 }
