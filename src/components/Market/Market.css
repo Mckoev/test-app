@@ -200,3 +200,21 @@ figure {
   color: #808080;
   margin-top: 4px;
 }
+
+.summary__info-btn {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  background-image: url(../../img/Market/Close.svg);
+}
+
+.summary__info-btn img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}

@@ -1,9 +1,9 @@
 import React from 'react'
 import Edit from '../../../img/Market/Edit.svg'
-import Close from '../../../img/Market/Close.svg'
 import photo from '../../../img/Photo/photo.png'
 import photo1 from '../../../img/Photo/photo1.png'
 import photo2 from '../../../img/Photo/photo2.png'
+import ButtonClose from './ButtonClose'
 
 function MainBlock() {
   const main_title = 'Перспективные захоронения'
@@ -85,20 +85,20 @@ function MainBlock() {
         </div>
         <div className="summary__info-photo-block">
           <figure>
-            <img src={photo} alt="stoun" className="summary__info-photo">
-              {/* <button></button> */}
-            </img>
-            {/* <img src={Close} alt="close"></img> */}
+            <img src={photo} alt="stoun" className="summary__info-photo" />
+            <ButtonClose />
             <figcaption className="summary__info-photo-subscription">Надгробный камень.jpg</figcaption>
             <figcaption className="summary__info-photo-date">11 июня 2018</figcaption>
           </figure>
           <figure>
             <img src={photo1} alt="photo1" className="summary__info-photo" />
+            <ButtonClose />
             <figcaption className="summary__info-photo-subscription">Общий вид.jpg</figcaption>
             <figcaption className="summary__info-photo-date">11 июня 2018</figcaption>
           </figure>
           <figure>
             <img src={photo2} alt="photo2" className="summary__info-photo" />
+            <ButtonClose />
             <figcaption className="summary__info-photo-subscription">Пример ограды.jpg</figcaption>
             <figcaption className="summary__info-photo-date">11 июня 2018</figcaption>
           </figure>
