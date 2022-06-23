@@ -100,3 +100,103 @@
   height: 0px;
   border: 1px solid #e5e5e5;
 }
+
+.main-block {
+  margin: 24px 40px 60px;
+}
+
+.main-block__name {
+  display: flex;
+  align-items: center;
+}
+
+.main-block__title {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #222222;
+  margin-right: 12px;
+}
+
+.summary__info {
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+
+.summary__info-name {
+  display: flex;
+  margin-top: 32px;
+}
+
+.summaru__info-title {
+  margin-right: 16px;
+}
+
+.summary__info-notation {
+  display: flex;
+}
+
+.summary__info-blocks {
+  display: flex;
+  margin-top: 20px;
+}
+
+.summary__info-block-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 150px;
+}
+
+.summary__info-block-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 12px;
+}
+
+.summary__info-text-field {
+  margin-bottom: 12px;
+}
+
+.summary__info-hr {
+  width: 1088px;
+  height: 0px;
+  border: 1px solid #e5e5e5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.summary__info-photo-block {
+  display: flex;
+}
+
+figure {
+  width: 160px;
+  height: 160px;
+  margin-right: 24px;
+  margin-left: 0px;
+  margin-top: 20px;
+}
+
+.summary__info-photo-subscription {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #3b3b3b;
+  margin-top: 8px;
+}
+
+.summary__info-photo-date {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #808080;
+  margin-top: 4px;
+}
