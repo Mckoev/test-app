@@ -120,6 +120,20 @@
   margin-right: 12px;
 }
 
+.main-block__btn-edit {
+  width: 20px;
+  height: 20px;
+  background-image: url('../../img/Market/Edit.svg');
+  border: none;
+  background-color: #fff;
+}
+
+.main-block__btn-edit:active {
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+  border-radius: 20%;
+}
+
 .summary__info {
   margin-top: 12px;
   margin-bottom: 32px;
@@ -159,13 +173,29 @@
 
 .summary__info-text-field {
   margin-bottom: 12px;
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  color: #3b3b3b;
+}
+
+.summary__info-text-field-value {
+  margin-bottom: 12px;
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #3b3b3b;
 }
 
 .summary__info-hr {
   width: 1088px;
   height: 0px;
   border: 1px solid #e5e5e5;
-  margin-top: 20px;
+  margin-top: 12px;
   margin-bottom: 20px;
 }
 
@@ -179,6 +209,7 @@ figure {
   margin-right: 24px;
   margin-left: 0px;
   margin-top: 20px;
+  position: relative;
 }
 
 .summary__info-photo-subscription {
@@ -204,8 +235,12 @@ figure {
 .summary__info-btn {
   width: 20px;
   height: 20px;
-  position: relative;
+  position: absolute;
   background-image: url(../../img/Market/Close.svg);
+  border-radius: 50%;
+  border: none;
+  bottom: 132px;
+  left: 132px;
 }
 
 .summary__info-btn img {
@@ -214,7 +249,40 @@ figure {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
+}
+
+.summary__info-btn-add {
+  display: block;
+  margin-top: 50px;
+  width: 400px;
+  height: 40px;
+  background-image: url('../../img/Market/Add.svg');
+  padding: 10px 40px 10px 12px;
+  background-repeat: no-repeat;
+  background-position: 4%;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 160%;
+  color: #82b284;
+}
+
+.summary__info-btn-add:active {
+  background-color: #e5e5e5;
+}
+
+footer {
+  width: 1088px;
+  height: 48px;
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 26px;
+  text-align: center;
+  color: #b9b9b9;
 }

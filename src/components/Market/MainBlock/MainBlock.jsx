@@ -1,52 +1,20 @@
 import React from 'react'
-import Edit from '../../../img/Market/Edit.svg'
 import photo from '../../../img/Photo/photo.png'
 import photo1 from '../../../img/Photo/photo1.png'
 import photo2 from '../../../img/Photo/photo2.png'
-import ButtonClose from './ButtonClose'
+import Photos from './Photos'
 
-function MainBlock() {
-  const main_title = 'Перспективные захоронения'
-  const summary_info = 'ОБЩАЯ ИНФОРМАЦИЯ'
-  const contacts = 'КОНТАКТНЫЕ ДАННЫЕ'
-  const added_photo = 'ПРИЛОЖЕННЫЕ ФОТО'
-
-  const SUMMARY_INFO_DESCRIPTION = {
-    FULL_NOTATION: 'Полное название',
-    CONTRACT: 'Договор',
-    FORM: 'Форма',
-    TYPE: 'Тип',
-  }
-
-  const SUMMARY_INFO_podstanovka = {
-    FULL_NOTATION: 'ООО Фирма “Перспективные захоронения”',
-    CONTRACT: '12345 от 12.03.2015',
-    FORM: 'ООО',
-    TYPE: 'Агент, Подрядчик',
-  }
-
-  const CONTACT_DETAILS = {
-    FULL_NAME: 'ФИО',
-    TELEPHONE: 'Телефон',
-    EMAIL: 'Эл. почта',
-  }
-
-  const CONTACT_DETAILS_podstanovka = {
-    FULL_NAME: 'Григорьев Сергей Петрович',
-    TELEPHONE: '+7 (916) 216-55-88',
-    EMAIL: 'grigoriev@funeral.com',
-  }
-
+function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, SUMMARY_INFO_podstanovka, CONTACT_DETAILS, CONTACT_DETAILS_podstanovka, PHOTOS_DESCRIPTION, PHOTOS_DATES }) {
   return (
     <main className="main-block">
       <div className="main-block__name">
-        <div className="main-block__title">{main_title}</div>
-        <img src={Edit} alt="edit"></img>
+        <div className="main-block__title">{SUMMARY_DATA.main_title}</div>
+        <button className="main-block__btn-edit"></button>
       </div>
       <section className="summary__info">
         <div className="summary__info-name">
-          <div className="summaru__info-title">{summary_info}</div>
-          <img src={Edit} alt="edit"></img>
+          <div className="summaru__info-title">{SUMMARY_DATA.summary_info}</div>
+          <button className="main-block__btn-edit"></button>
         </div>
         <div className="summary__info-blocks">
           <div className="summary__info-block-left">
@@ -56,16 +24,16 @@ function MainBlock() {
             <div className="summary__info-text-field">{SUMMARY_INFO_DESCRIPTION.TYPE}</div>
           </div>
           <div className="summary__info-block-right">
-            <div className="summary__info-text-field">{SUMMARY_INFO_podstanovka.FULL_NOTATION}</div>
-            <div className="summary__info-text-field">{SUMMARY_INFO_podstanovka.CONTRACT}</div>
-            <div className="summary__info-text-field">{SUMMARY_INFO_podstanovka.FORM}</div>
-            <div className="summary__info-text-field">{SUMMARY_INFO_podstanovka.TYPE}</div>
+            <div className="summary__info-text-field-value">{SUMMARY_INFO_podstanovka.FULL_NOTATION}</div>
+            <div className="summary__info-text-field-value">{SUMMARY_INFO_podstanovka.CONTRACT}</div>
+            <div className="summary__info-text-field-value">{SUMMARY_INFO_podstanovka.FORM}</div>
+            <div className="summary__info-text-field-value">{SUMMARY_INFO_podstanovka.TYPE}</div>
           </div>
         </div>
         <div className="summary__info-hr"></div>
         <div className="summary__info-name">
-          <div className="summaru__info-title">{contacts}</div>
-          <img src={Edit} alt="edit"></img>
+          <div className="summaru__info-title">{SUMMARY_DATA.contacts}</div>
+          <button className="main-block__btn-edit"></button>
         </div>
         <div className="summary__info-blocks">
           <div className="summary__info-block-left">
@@ -74,36 +42,26 @@ function MainBlock() {
             <div className="summary__info-text-field">{CONTACT_DETAILS.EMAIL}</div>
           </div>
           <div className="summary__info-block-right">
-            <div className="summary__info-text-field">{CONTACT_DETAILS_podstanovka.FULL_NAME}</div>
-            <div className="summary__info-text-field">{CONTACT_DETAILS_podstanovka.TELEPHONE}</div>
-            <div className="summary__info-text-field">{CONTACT_DETAILS_podstanovka.EMAIL}</div>
+            <div className="summary__info-text-field-value">{CONTACT_DETAILS_podstanovka.FULL_NAME}</div>
+            <div className="summary__info-text-field-value">{CONTACT_DETAILS_podstanovka.TELEPHONE}</div>
+            <div className="summary__info-text-field-value">{CONTACT_DETAILS_podstanovka.EMAIL}</div>
           </div>
         </div>
         <div className="summary__info-hr"></div>
         <div className="summary__info-name">
-          <div className="summaru__info-title">{added_photo}</div>
+          <div className="summaru__info-title">{SUMMARY_DATA.added_photo}</div>
         </div>
         <div className="summary__info-photo-block">
-          <figure>
-            <img src={photo} alt="stoun" className="summary__info-photo" />
-            <ButtonClose />
-            <figcaption className="summary__info-photo-subscription">Надгробный камень.jpg</figcaption>
-            <figcaption className="summary__info-photo-date">11 июня 2018</figcaption>
-          </figure>
-          <figure>
-            <img src={photo1} alt="photo1" className="summary__info-photo" />
-            <ButtonClose />
-            <figcaption className="summary__info-photo-subscription">Общий вид.jpg</figcaption>
-            <figcaption className="summary__info-photo-date">11 июня 2018</figcaption>
-          </figure>
-          <figure>
-            <img src={photo2} alt="photo2" className="summary__info-photo" />
-            <ButtonClose />
-            <figcaption className="summary__info-photo-subscription">Пример ограды.jpg</figcaption>
-            <figcaption className="summary__info-photo-date">11 июня 2018</figcaption>
-          </figure>
+          <Photos photo={photo} description={PHOTOS_DESCRIPTION.photo} date={PHOTOS_DATES.photo} />
+          <Photos photo={photo1} description={PHOTOS_DESCRIPTION.photo1} date={PHOTOS_DATES.photo1} />
+          <Photos photo={photo2} description={PHOTOS_DESCRIPTION.photo2} date={PHOTOS_DATES.photo2} />
         </div>
+        <button className="summary__info-btn-add"> ДОБАВИТЬ ИЗОБРАЖЕНИЕ</button>
       </section>
+      <div className="summary__info-hr"></div>
+      <footer>
+        © 1992 - 2020 Честный Агент © Все права защищены. <br />8 (495) 150-21-12{' '}
+      </footer>
     </main>
   )
 }
