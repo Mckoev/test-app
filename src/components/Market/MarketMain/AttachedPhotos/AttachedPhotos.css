@@ -1,4 +1,4 @@
-.summary__info-btn {
+.photos__btn {
   width: 20px;
   height: 20px;
   position: absolute;
@@ -9,7 +9,7 @@
   left: 132px;
 }
 
-.summary__info-photo-subscription {
+.photos__info-photo-subscription {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -17,7 +17,7 @@
   margin-top: 8px;
 }
 
-.summary__info-photo-date {
+.photos__info-photo-date {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;

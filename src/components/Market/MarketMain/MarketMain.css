@@ -1,4 +1,4 @@
-.marketHeader__wrapper {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6,7 +6,7 @@
   height: 72px;
 }
 
-.marketHeader__wrapper-title {
+.header .title {
   width: 292px;
   height: 72px;
   display: flex;
@@ -15,19 +15,19 @@
   margin-left: 40px;
 }
 
-.marketHeader__arrow {
+.header__arrow {
   width: 20px;
   height: 20px;
 }
 
-.marketHeader__title {
+.header__title {
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
   color: #82b284;
 }
 
-.marketHeader__icons {
+.header__icons {
   width: 108px;
   height: 20px;
   display: flex;
@@ -36,7 +36,7 @@
   margin-right: 40px;
 }
 
-.marketHeader__hr {
+.header__hr {
   width: 1168px;
   height: 0px;
   border: 1px solid #e5e5e5;

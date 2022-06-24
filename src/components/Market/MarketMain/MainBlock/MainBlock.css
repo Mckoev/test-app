@@ -1,13 +1,13 @@
-.main-block {
+.main {
   margin: 24px 40px 60px;
 }
 
-.main-block__name {
+.main__name {
   display: flex;
   align-items: center;
 }
 
-.main-block__title {
+.main__title {
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
@@ -15,7 +15,7 @@
   margin-right: 12px;
 }
 
-.main-block__btn-edit {
+.main__btn-edit {
   width: 20px;
   height: 20px;
   background-image: url('../../../../img/Market/Edit.svg');
@@ -23,50 +23,50 @@
   background-color: #fff;
 }
 
-.main-block__btn-edit:active {
+.main__btn-edit:active {
   background-color: #e5e5e5;
   border: 1px solid #e5e5e5;
   border-radius: 20%;
 }
 
-.summary__info {
+.summary-info {
   margin-top: 12px;
   margin-bottom: 32px;
 }
 
-.summary__info-name {
+.summary-info__name {
   display: flex;
   margin-top: 32px;
 }
 
-.summaru__info-title {
+.summaru-info__title {
   margin-right: 16px;
 }
 
-.summary__info-notation {
+.summary-info__notation {
   display: flex;
 }
 
-.summary__info-blocks {
+.summary-info__blocks {
   display: flex;
   margin-top: 20px;
 }
 
-.summary__info-block-left {
+.summary-info__block-left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 150px;
 }
 
-.summary__info-block-right {
+.summary-info__block-right {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 12px;
 }
 
-.summary__info-text-field {
+.summary-info__text-field {
   margin-bottom: 12px;
   font-weight: 300;
   font-size: 14px;
@@ -74,7 +74,7 @@
   color: #3b3b3b;
 }
 
-.summary__info-text-field-value {
+.summary-info__text-field-value {
   margin-bottom: 12px;
   font-weight: 400;
   font-size: 14px;
@@ -82,7 +82,7 @@
   color: #3b3b3b;
 }
 
-.summary__info-hr {
+.summary-info__hr {
   width: 1088px;
   height: 0px;
   border: 1px solid #e5e5e5;
@@ -90,7 +90,7 @@
   margin-bottom: 20px;
 }
 
-.summary__info-photo-block {
+.summary-info__photo-block {
   display: flex;
 }
 
@@ -103,7 +103,7 @@ figure {
   position: relative;
 }
 
-.summary__info-btn img {
+.summary-info__btn img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -111,7 +111,7 @@ figure {
   -ms-transform: translate(-50%, -50%);
 }
 
-.summary__info-btn-add {
+.summary-info__btn-add {
   display: block;
   margin-top: 50px;
   width: 400px;
@@ -129,7 +129,7 @@ figure {
   color: #82b284;
 }
 
-.summary__info-btn-add:active {
+.summary-info__btn-add:active {
   background-color: #e5e5e5;
 }
 

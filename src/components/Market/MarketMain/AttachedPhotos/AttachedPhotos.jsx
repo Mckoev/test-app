@@ -5,9 +5,9 @@ function AttachedPhotos({ photo, description, date }) {
   return (
     <figure>
       <img src={photo} alt="stoun" />
-      <button className="summary__info-btn"></button>
-      <figcaption className="summary__info-photo-subscription">{description}</figcaption>
-      <figcaption className="summary__info-photo-date">{date}</figcaption>
+      <button className="photos__btn"></button>
+      <figcaption className="photos__info-photo-subscription">{description}</figcaption>
+      <figcaption className="photos__info-photo-date">{date}</figcaption>
     </figure>
   )
 }

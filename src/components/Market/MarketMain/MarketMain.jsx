@@ -17,18 +17,18 @@ function MarketMain() {
   const title = 'К СПИСКУ ЮРИДИЧЕСКИХ ЛИЦ'
   return (
     <div>
-      <header className="marketHeader__wrapper">
-        <div className="marketHeader__wrapper-title">
-          <img src={Long} alt="iconArrow" className="marketHeader__arrow"></img>
-          <div className="marketHeader__title">{title}</div>
+      <header className="header">
+        <div className="header title">
+          <img src={Long} alt="iconArrow" className="header__arrow"></img>
+          <div className="header__title">{title}</div>
         </div>
-        <div className="marketHeader__icons">
+        <div className="header__icons">
           <img src={Linked} alt="Linked"></img>
           <img src={Arrows} alt="Arrows"></img>
           <img src={Trash} alt="Trash"></img>
         </div>
       </header>
-      <div className="marketHeader__hr"></div>
+      <div className="header__hr"></div>
       <MainBlock
         SUMMARY_DATA={SUMMARY_DATA}
         SUMMARY_INFO_DESCRIPTION={SUMMARY_INFO_DESCRIPTION}
