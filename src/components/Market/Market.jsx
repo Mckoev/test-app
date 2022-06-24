@@ -1,6 +1,5 @@
 import React from 'react'
-import './Market.css'
-import MarketMain from './MainBlock/MarketMain'
+import MarketMain from './MarketMain/MarketMain'
 import MarketSide from './MarketSide/MarketSide'
 
 function Market() {

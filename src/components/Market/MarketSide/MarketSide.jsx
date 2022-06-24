@@ -1,7 +1,8 @@
 import React from 'react'
-import Agent from './Agent'
-import ProcessManager from './ProcessManager'
-import Organizations from './Organizations'
+import Agent from './MarketSideComponents/Agent'
+import ProcessManager from './MarketSideComponents/ProcessManager'
+import Organizations from './MarketSideComponents/Organizations'
+import './MarketSide.css'
 
 function MarketSide() {
   const agentName = 'ЧЕСТНЫЙ АГЕНТ'

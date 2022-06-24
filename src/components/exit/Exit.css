@@ -1,0 +1,63 @@
+.exit {
+  width: 320px;
+  height: 198px;
+  box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+  text-align: start;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #3b3b3b;
+}
+
+.exit__remove-card {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+}
+.exit__send-card {
+  padding-right: 90px;
+  margin-top: 16px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.exit__cards {
+  flex: 1 0 auto;
+}
+
+.exit__buttons {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 auto;
+}
+
+.exit__buttons-cancel {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #b9b9b9;
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+
+.exit__buttons-cancel:active {
+  background-color: #e5e5e5;
+}
+
+.exit__buttons-remove {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #82b284;
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+
+.exit__buttons-remove:active {
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import iconOrganization from '../../../img/Market/organizations.svg'
+import iconOrganization from '../../../../img/Market/organizations.svg'
 
 function Organizations({ nameOrganizations }) {
   return (

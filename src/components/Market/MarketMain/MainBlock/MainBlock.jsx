@@ -1,8 +1,9 @@
 import React from 'react'
-import photo from '../../../img/Photo/photo.png'
-import photo1 from '../../../img/Photo/photo1.png'
-import photo2 from '../../../img/Photo/photo2.png'
-import Photos from './Photos'
+import photo from '../../../../img/Photo/photo.png'
+import photo1 from '../../../../img/Photo/photo1.png'
+import photo2 from '../../../../img/Photo/photo2.png'
+import AttachedPhotos from '../AttachedPhotos/AttachedPhotos'
+import './MainBlock.css'
 
 function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, SUMMARY_INFO_podstanovka, CONTACT_DETAILS, CONTACT_DETAILS_podstanovka, PHOTOS_DESCRIPTION, PHOTOS_DATES }) {
   return (
@@ -52,9 +53,9 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, SUMMARY_INFO_podsta
           <div className="summaru__info-title">{SUMMARY_DATA.added_photo}</div>
         </div>
         <div className="summary__info-photo-block">
-          <Photos photo={photo} description={PHOTOS_DESCRIPTION.photo} date={PHOTOS_DATES.photo} />
-          <Photos photo={photo1} description={PHOTOS_DESCRIPTION.photo1} date={PHOTOS_DATES.photo1} />
-          <Photos photo={photo2} description={PHOTOS_DESCRIPTION.photo2} date={PHOTOS_DATES.photo2} />
+          <AttachedPhotos photo={photo} description={PHOTOS_DESCRIPTION.photo} date={PHOTOS_DATES.photo} />
+          <AttachedPhotos photo={photo1} description={PHOTOS_DESCRIPTION.photo1} date={PHOTOS_DATES.photo1} />
+          <AttachedPhotos photo={photo2} description={PHOTOS_DESCRIPTION.photo2} date={PHOTOS_DATES.photo2} />
         </div>
         <button className="summary__info-btn-add"> ДОБАВИТЬ ИЗОБРАЖЕНИЕ</button>
       </section>

@@ -1,6 +1,7 @@
 import React from 'react'
+import './AttachedPhotos.css'
 
-function Photos({ photo, description, date }) {
+function AttachedPhotos({ photo, description, date }) {
   return (
     <figure>
       <img src={photo} alt="stoun" />
@@ -11,4 +12,4 @@ function Photos({ photo, description, date }) {
   )
 }
 
-export default Photos
+export default AttachedPhotos

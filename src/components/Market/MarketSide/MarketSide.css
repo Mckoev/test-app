@@ -1,0 +1,47 @@
+.wrapper__market-side-agent {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0.03em;
+  color: #3b3b3b;
+}
+
+.wrapper__market-side {
+  width: 224px;
+  height: 900px;
+  background-color: #f7f7f7;
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.072) 0%, rgba(255, 255, 255, 0) 10%);
+  background-color: #f7f7f7;
+}
+
+.wrapper__market-side-organizations {
+  background: #eeeeee;
+  width: 224px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.wrapper__market-side-organizations-img {
+  width: 20px;
+  height: 20px;
+}
+
+.wrapper__market-side-organizations-text {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #82b284;
+  margin-left: 12px;
+}
+
+.wrapper__market-side-processManager {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 160%;
+  letter-spacing: 0.2px;
+  color: #3b3b3b;
+}

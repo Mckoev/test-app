@@ -1,0 +1,26 @@
+.summary__info-btn {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-image: url(../../../../img/Market/Close.svg);
+  border-radius: 50%;
+  border: none;
+  bottom: 132px;
+  left: 132px;
+}
+
+.summary__info-photo-subscription {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #3b3b3b;
+  margin-top: 8px;
+}
+
+.summary__info-photo-date {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #808080;
+  margin-top: 4px;
+}
