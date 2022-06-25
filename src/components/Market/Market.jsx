@@ -1,6 +1,6 @@
 import React from 'react'
-import MarketMain from './MarketMain/MarketMain'
-import MarketSide from './MarketSide/MarketSide'
+import MarketMain from './marketMain/MarketMain'
+import MarketSide from './marketSide/MarketSide'
 
 function Market() {
   return (

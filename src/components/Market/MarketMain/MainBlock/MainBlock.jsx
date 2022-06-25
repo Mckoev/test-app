@@ -2,8 +2,9 @@ import React from 'react'
 import photo from '../../../../img/Photo/photo.png'
 import photo1 from '../../../../img/Photo/photo1.png'
 import photo2 from '../../../../img/Photo/photo2.png'
-import AttachedPhotos from '../AttachedPhotos/AttachedPhotos'
+import AttachedPhotos from '../attachedPhotos/AttachedPhotos'
 import './MainBlock.css'
+import { fetchCompanies } from '../../../../fetch/fetch'
 
 function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, SUMMARY_INFO_podstanovka, CONTACT_DETAILS, CONTACT_DETAILS_podstanovka, PHOTOS_DESCRIPTION, PHOTOS_DATES }) {
   return (
@@ -57,7 +58,9 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, SUMMARY_INFO_podsta
           <AttachedPhotos photo={photo1} description={PHOTOS_DESCRIPTION.photo1} date={PHOTOS_DATES.photo1} />
           <AttachedPhotos photo={photo2} description={PHOTOS_DESCRIPTION.photo2} date={PHOTOS_DATES.photo2} />
         </div>
-        <button className="summary-info__btn-add"> ДОБАВИТЬ ИЗОБРАЖЕНИЕ</button>
+        <button className="summary-info__btn-add" onClick={() => fetchCompanies()}>
+          ДОБАВИТЬ ИЗОБРАЖЕНИЕ
+        </button>
       </section>
       <div className="summary-info__hr"></div>
       <footer>

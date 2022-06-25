@@ -116,7 +116,7 @@ figure {
   margin-top: 50px;
   width: 400px;
   height: 40px;
-  background-image: url('../../../../img/Market/Add.svg');
+  background-image: url('../../../../img/Market/Button-regular.svg');
   padding: 10px 40px 10px 12px;
   background-repeat: no-repeat;
   background-position: 4%;
@@ -129,8 +129,14 @@ figure {
   color: #82b284;
 }
 
+.summary-info__btn-add:hover {
+  color: #98c88c;
+  background-image: url('../../../../img/Market/Button-hovered.svg');
+}
+
 .summary-info__btn-add:active {
-  background-color: #e5e5e5;
+  color: #58a742;
+  background-image: url('../../../../img/Market/Button-pressed.svg');
 }
 
 footer {

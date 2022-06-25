@@ -1,7 +1,7 @@
 import React from 'react'
-import Agent from './MarketSideComponents/Agent'
-import ProcessManager from './MarketSideComponents/ProcessManager'
-import Organizations from './MarketSideComponents/Organizations'
+import Agent from './marketSideComponents/Agent'
+import ProcessManager from './marketSideComponents/ProcessManager'
+import Organizations from './marketSideComponents/Organizations'
 import './MarketSide.css'
 
 function MarketSide() {
