@@ -17,8 +17,10 @@ export async function fetchCompanies() {
     console.log(xhr.response)
     let answer = JSON.parse(xhr.response)
     console.log(answer)
-    console.log(answer.id)
     console.log(answer.name)
+    console.log(`${answer.contract.no} от ${new Date(answer.contract.issue_date)}`)
+    console.log(answer.businessEntity)
+    console.log(...answer.type)
     if (xhr.status !== 200) {
       console.log(`Ошибка ${xhr.status}: ${xhr.statusText}`)
     } else {

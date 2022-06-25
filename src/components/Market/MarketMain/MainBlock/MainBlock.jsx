@@ -50,7 +50,7 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, SUMMARY_INFO_podsta
           </div>
         </div>
         <div className="summary-info__hr"></div>
-        <div className="summary-info-__name">
+        <div className="summary-info__name">
           <div className="summaru-info__title">{SUMMARY_DATA.added_photo}</div>
         </div>
         <div className="summary-info__photo-block">
