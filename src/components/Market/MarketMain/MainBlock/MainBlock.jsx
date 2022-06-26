@@ -6,6 +6,7 @@ import AttachedPhotos from '../attachedPhotos/AttachedPhotos'
 import './MainBlock.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { token, URL_COMPANIES, URL_CONTACTS } from '../../../../fetch/fetch.js'
+import Modal from '../../../modals/Modal'
 
 function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PHOTOS_DESCRIPTION, PHOTOS_DATES }) {
   useEffect(() => {
@@ -128,6 +129,7 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
         </button>
       </section>
       <div className="summary-info__hr"></div>
+      <Modal />
       <footer>
         © 1992 - 2020 Честный Агент © Все права защищены. <br />8 (495) 150-21-12{' '}
       </footer>
