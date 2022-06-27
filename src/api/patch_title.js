@@ -1,5 +1,6 @@
-import { token, URL_COMPANIES, URL_CONTACTS } from './api_data'
+import { token, URL_COMPANIES } from './api_data'
 import { store } from '../redux/store/store'
+import { summaryDataAction } from '../redux/store/reducers/reducer'
 
 export const updateTitle = (name) => {
   const body = JSON.stringify({ shortName: name })
@@ -10,9 +11,6 @@ export const updateTitle = (name) => {
   xhr.send(body)
   xhr.onload = function () {
     const answer = JSON.parse(xhr.response)
-    store.dispatch({
-      type: 'SUMMARY_DATA',
-      SHORT_NAME: answer.shortName,
-    })
+    store.dispatch(summaryDataAction({ SHORT_NAME: answer.shortName }))
   }
 }

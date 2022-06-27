@@ -1,5 +1,7 @@
 import { token, URL_COMPANIES, URL_CONTACTS } from './api_data'
-import { store } from '../redux/store/store'
+import { store } from '../reduxToolkit'
+import { contactDetailsAction, summaryDataAction } from '../redux/store/reducers/reducer'
+import { shortName, full_name, contract, form, type, full_notation } from '../reduxToolkit/toolkitSlice'
 
 export const getCompany = () => {
   let xhr = new XMLHttpRequest()
@@ -14,7 +16,7 @@ export const getCompany = () => {
     const month = date.getMonth() + 1
     const day = date.getDate()
     const contract_day = `${answer.contract.no} от ${day}.${month < 10 ? '0' + month : month}.${year}`
-    const type = answer.type.map(function (item) {
+    const type_answer = answer.type.map(function (item) {
       switch (item) {
         case 'agent':
           return 'Агент'
@@ -24,14 +26,12 @@ export const getCompany = () => {
           return null
       }
     })
-    store.dispatch({
-      type: 'SUMMARY_DATA',
-      SHORT_NAME: answer.shortName,
-      FULL_NOTATION: answer.name,
-      CONTRACT: contract_day,
-      FORM: answer.businessEntity,
-      TYPE: type.join(', '),
-    })
+
+    store.dispatch(shortName(answer.shortName))
+    store.dispatch(full_notation(answer.name))
+    store.dispatch(contract(contract_day))
+    store.dispatch(form(answer.businessEntity))
+    store.dispatch(type(type_answer.join(', ')))
   }
 }
 
@@ -46,6 +46,12 @@ export const getContacts = () => {
     const fullName = answer_contacts.lastname + ' ' + answer_contacts.firstname + ' ' + answer_contacts.patronymic
     const str = answer_contacts.phone
     const phone = `+${str[0]}(${str[1]}${str[2]}${str[3]})${str[4]}${str[5]}${str[6]}-${str[7]}${str[8]}-${str[9]}${str[10]}`
-    store.dispatch({ type: 'CONTACT_DETAILS', FULL_NAME: fullName, TELEPHONE: phone, EMAIL: answer_contacts.email })
+    store.dispatch(
+      contactDetailsAction({
+        FULL_NAME: fullName,
+        TELEPHONE: phone,
+        EMAIL: answer_contacts.email,
+      })
+    )
   }
 }

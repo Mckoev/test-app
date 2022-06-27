@@ -15,10 +15,20 @@ const defaultState = {
 export const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case SUMMARY_DATA:
-      return { ...state, SHORT_NAME: action.SHORT_NAME, FULL_NOTATION: action.FULL_NOTATION, CONTRACT: action.CONTRACT, FORM: action.FORM, TYPE: action.TYPE }
+      return {
+        ...state,
+        SHORT_NAME: action.payload.SHORT_NAME,
+        FULL_NOTATION: action.payload.FULL_NOTATION,
+        CONTRACT: action.payload.CONTRACT,
+        FORM: action.payload.FORM,
+        TYPE: action.payload.TYPE,
+      }
     case CONTACT_DETAILS:
-      return { ...state, FULL_NAME: action.FULL_NAME, TELEPHONE: action.TELEPHONE, EMAIL: action.EMAIL }
+      return { ...state, FULL_NAME: action.payload.FULL_NAME, TELEPHONE: action.payload.TELEPHONE, EMAIL: action.payload.EMAIL }
     default:
       return state
   }
 }
+
+export const summaryDataAction = (payload) => ({ type: SUMMARY_DATA, payload })
+export const contactDetailsAction = (payload) => ({ type: CONTACT_DETAILS, payload })
