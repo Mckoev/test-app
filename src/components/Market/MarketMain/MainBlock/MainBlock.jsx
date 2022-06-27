@@ -5,13 +5,15 @@ import photo2 from '../../../../img/Photo/photo2.png'
 import AttachedPhotos from '../attachedPhotos/AttachedPhotos'
 import './MainBlock.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { token, URL_COMPANIES, URL_CONTACTS } from '../../../../fetch/fetch.js'
-import Modal from '../../../modals/Modal'
+import SummaryInfoModal from '../../../modals/SummaryInfoModal'
+import TitleModal from '../../../modals/TitleModal'
+import ContactsModal from '../../../modals/ContactsModal'
+import { getCompany, getContacts } from '../../../../api/get_request.js'
 
 function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PHOTOS_DESCRIPTION, PHOTOS_DATES }) {
   useEffect(() => {
-    changeCompany()
-    changeContacts()
+    getCompany()
+    getContacts()
   })
 
   const dispatch = useDispatch()
@@ -24,65 +26,28 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
   const telephone = useSelector((state) => state.TELEPHONE)
   const email = useSelector((state) => state.EMAIL)
 
-  const changeCompany = () => {
-    let xhr = new XMLHttpRequest()
-    xhr.open('GET', URL_COMPANIES)
-    xhr.setRequestHeader('Content-Type', 'application/json')
-    xhr.setRequestHeader('Authorization', `Bearer ${token}`)
-    xhr.send()
-    xhr.onload = function () {
-      let answer = JSON.parse(xhr.response)
-      const date = new Date(answer.contract.issue_date)
-      const year = date.getFullYear()
-      const month = date.getMonth() + 1
-      const day = date.getDate()
-      const contract_day = `${answer.contract.no} от ${day}.${month < 10 ? '0' + month : month}.${year}`
-      const type = answer.type.map(function (item) {
-        switch (item) {
-          case 'agent':
-            return 'Агент'
-          case 'contractor':
-            return 'Подрядчик'
-          default:
-            return null
-        }
-      })
-      dispatch({
-        type: 'SUMMARY_DATA',
-        SHORT_NAME: answer.shortName,
-        FULL_NOTATION: answer.name,
-        CONTRACT: contract_day,
-        FORM: answer.businessEntity,
-        TYPE: type.join(', '),
-      })
-    }
+  const setSummaryModelActive = () => {
+    dispatch({ type: 'SummaryInfoModal', SummaryInfoModal_is_active: true })
   }
 
-  const changeContacts = () => {
-    let xhr = new XMLHttpRequest()
-    xhr.open('GET', URL_CONTACTS)
-    xhr.setRequestHeader('Content-Type', 'application/json')
-    xhr.setRequestHeader('Authorization', `Bearer ${token}`)
-    xhr.send()
-    xhr.onload = function () {
-      let answer_contacts = JSON.parse(xhr.response)
-      const fullName = answer_contacts.lastname + ' ' + answer_contacts.firstname + ' ' + answer_contacts.patronymic
-      const str = answer_contacts.phone
-      const phone = `+${str[0]}(${str[1]}${str[2]}${str[3]})${str[4]}${str[5]}${str[6]}-${str[7]}${str[8]}-${str[9]}${str[10]}`
-      dispatch({ type: 'CONTACT_DETAILS', FULL_NAME: fullName, TELEPHONE: phone, EMAIL: answer_contacts.email })
-    }
+  const setTitleModelActive = () => {
+    dispatch({ type: 'TitleModal', TitleModal_is_active: true })
+  }
+
+  const setContactsModelActive = () => {
+    dispatch({ type: 'ContactsModal', ContactsModal_is_active: true })
   }
 
   return (
     <main className="main">
       <div className="main__name">
         <div className="main__title">{shortName}</div>
-        <button className="main__btn-edit"></button>
+        <button className="main__btn-edit" onClick={() => setTitleModelActive()}></button>
       </div>
       <section className="summary-info">
         <div className="summary-info__name">
           <div className="summaru-info__title">{SUMMARY_DATA.summary_info}</div>
-          <button className="main__btn-edit"></button>
+          <button className="main__btn-edit" onClick={() => setSummaryModelActive()}></button>
         </div>
         <div className="summary-info__blocks">
           <div className="summary-info__block-left">
@@ -101,7 +66,7 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
         <div className="summary-info__hr"></div>
         <div className="summary-info__name">
           <div className="summaru-info__title">{SUMMARY_DATA.contacts}</div>
-          <button className="main__btn-edit"></button>
+          <button className="main__btn-edit" onClick={() => setContactsModelActive()}></button>
         </div>
         <div className="summary-info__blocks">
           <div className="summary-info__block-left">
@@ -124,12 +89,14 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
           <AttachedPhotos photo={photo1} description={PHOTOS_DESCRIPTION.photo1} date={PHOTOS_DATES.photo1} />
           <AttachedPhotos photo={photo2} description={PHOTOS_DESCRIPTION.photo2} date={PHOTOS_DATES.photo2} />
         </div>
-        <button className="summary-info__btn-add" onClick={() => changeCompany()}>
+        <button className="summary-info__btn-add" onClick={() => getCompany()}>
           ДОБАВИТЬ ИЗОБРАЖЕНИЕ
         </button>
       </section>
       <div className="summary-info__hr"></div>
-      <Modal />
+      <TitleModal />
+      <SummaryInfoModal />
+      <ContactsModal />
       <footer>
         © 1992 - 2020 Честный Агент © Все права защищены. <br />8 (495) 150-21-12{' '}
       </footer>

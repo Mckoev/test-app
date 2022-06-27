@@ -13,6 +13,7 @@ import './MarketMain.css'
 
 function MarketMain() {
   const title = 'К СПИСКУ ЮРИДИЧЕСКИХ ЛИЦ'
+
   return (
     <div>
       <header className="header">
