@@ -1,7 +1,6 @@
 import { token, URL_COMPANIES, URL_CONTACTS } from './api_data'
 import { store } from '../reduxToolkit'
-import { contactDetailsAction, summaryDataAction } from '../redux/store/reducers/reducer'
-import { shortName, full_name, contract, form, type, full_notation } from '../reduxToolkit/toolkitSlice'
+import { shortName, full_name, contract, form, type, full_notation, telephone, email } from '../reduxToolkit/toolkitSlice'
 
 export const getCompany = () => {
   let xhr = new XMLHttpRequest()
@@ -46,12 +45,8 @@ export const getContacts = () => {
     const fullName = answer_contacts.lastname + ' ' + answer_contacts.firstname + ' ' + answer_contacts.patronymic
     const str = answer_contacts.phone
     const phone = `+${str[0]}(${str[1]}${str[2]}${str[3]})${str[4]}${str[5]}${str[6]}-${str[7]}${str[8]}-${str[9]}${str[10]}`
-    store.dispatch(
-      contactDetailsAction({
-        FULL_NAME: fullName,
-        TELEPHONE: phone,
-        EMAIL: answer_contacts.email,
-      })
-    )
+    store.dispatch(full_name(fullName))
+    store.dispatch(telephone(phone))
+    store.dispatch(email(answer_contacts.email))
   }
 }

@@ -24,12 +24,10 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
   const full = useSelector((state) => state.toolkit.full_notation)
   const contract = useSelector((state) => state.toolkit.contract)
   const form = useSelector((state) => state.toolkit.form)
-  const type = useSelector((state) => state.TYPE)
-  const name = useSelector((state) => state.FULL_NAME)
-  const telephone = useSelector((state) => state.TELEPHONE)
-  const email = useSelector((state) => state.EMAIL)
-  const samstate = useSelector((state) => state)
-  console.log(samstate)
+  const type = useSelector((state) => state.toolkit.type)
+  const name = useSelector((state) => state.toolkit.full_name)
+  const telephone = useSelector((state) => state.toolkit.telephone)
+  const email = useSelector((state) => state.toolkit.email)
 
   return (
     <main className="main">
@@ -89,7 +87,7 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
         <TitleModal setModalIsActive={setTitleModal_is_active} />
       </Modal>
       <Modal is_active={summaryInfoModal_is_active} setModalIsActive={setSummaryInfoModal_is_active}>
-        <SummaryInfoModal />
+        <SummaryInfoModal setSummaryInfoModal_is_active={setSummaryInfoModal_is_active} />
       </Modal>
       <Modal is_active={contactsModal_is_active} setModalIsActive={setContactsModal_is_active}>
         <ContactsModal />

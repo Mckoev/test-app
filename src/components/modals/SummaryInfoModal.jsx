@@ -1,18 +1,18 @@
 import React from 'react'
+import { updateSummaryInfo } from '../../api/patch_title'
 import { SUMMARY_INFO_DESCRIPTION } from '../market/MarketData'
 import './Modal.css'
 
-function SummaryInfoModal() {
-  function catchEvent(e) {
+function SummaryInfoModal({ setSummaryInfoModal_is_active }) {
+  function changeSummaryInfo(e) {
     e.preventDefault()
-    console.log(e.target[0].value)
-    console.log(e.target[1].value)
-    console.log(e.target[2].value)
-    console.log(e.target[3].value)
+    updateSummaryInfo(e.target[0].value, e.target[1].value, e.target[2].value, e.target[3].value)
+    e.target.reset()
+    setSummaryInfoModal_is_active(false)
   }
 
   return (
-    <form onSubmit={(e) => catchEvent(e)}>
+    <form onSubmit={(e) => changeSummaryInfo(e)}>
       <div className="summary-info__blocks">
         <div className="summary-info__block-left">
           <div className="summary-info__field">{SUMMARY_INFO_DESCRIPTION.FULL_NOTATION}</div>
