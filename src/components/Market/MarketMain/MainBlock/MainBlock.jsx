@@ -1,22 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import photo from '../../../../img/Photo/photo.png'
 import photo1 from '../../../../img/Photo/photo1.png'
 import photo2 from '../../../../img/Photo/photo2.png'
 import AttachedPhotos from '../attachedPhotos/AttachedPhotos'
 import './MainBlock.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import SummaryInfoModal from '../../../modals/SummaryInfoModal'
 import TitleModal from '../../../modals/TitleModal'
 import ContactsModal from '../../../modals/ContactsModal'
 import { getCompany, getContacts } from '../../../../api/get_request.js'
+import Modal from '../../../modals/Modal'
 
 function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PHOTOS_DESCRIPTION, PHOTOS_DATES }) {
   useEffect(() => {
     getCompany()
     getContacts()
-  })
+  }, [])
 
-  const dispatch = useDispatch()
+  const [titleModal_is_active, setTitleModal_is_active] = useState(false)
+  const [summaryInfoModal_is_active, setSummaryInfoModal_is_active] = useState(false)
+  const [contactsModal_is_active, setContactsModal_is_active] = useState(false)
   const shortName = useSelector((state) => state.SHORT_NAME)
   const full = useSelector((state) => state.FULL_NOTATION)
   const contract = useSelector((state) => state.CONTRACT)
@@ -25,29 +28,19 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
   const name = useSelector((state) => state.FULL_NAME)
   const telephone = useSelector((state) => state.TELEPHONE)
   const email = useSelector((state) => state.EMAIL)
-
-  const setSummaryModelActive = () => {
-    dispatch({ type: 'SummaryInfoModal', SummaryInfoModal_is_active: true })
-  }
-
-  const setTitleModelActive = () => {
-    dispatch({ type: 'TitleModal', TitleModal_is_active: true })
-  }
-
-  const setContactsModelActive = () => {
-    dispatch({ type: 'ContactsModal', ContactsModal_is_active: true })
-  }
+  const samstate = useSelector((state) => state)
+  console.log(samstate)
 
   return (
     <main className="main">
       <div className="main__name">
         <div className="main__title">{shortName}</div>
-        <button className="main__btn-edit" onClick={() => setTitleModelActive()}></button>
+        <button className="main__btn-edit" onClick={() => setTitleModal_is_active(true)}></button>
       </div>
       <section className="summary-info">
         <div className="summary-info__name">
           <div className="summaru-info__title">{SUMMARY_DATA.summary_info}</div>
-          <button className="main__btn-edit" onClick={() => setSummaryModelActive()}></button>
+          <button className="main__btn-edit" onClick={() => setSummaryInfoModal_is_active(true)}></button>
         </div>
         <div className="summary-info__blocks">
           <div className="summary-info__block-left">
@@ -66,7 +59,7 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
         <div className="summary-info__hr"></div>
         <div className="summary-info__name">
           <div className="summaru-info__title">{SUMMARY_DATA.contacts}</div>
-          <button className="main__btn-edit" onClick={() => setContactsModelActive()}></button>
+          <button className="main__btn-edit" onClick={() => setContactsModal_is_active(true)}></button>
         </div>
         <div className="summary-info__blocks">
           <div className="summary-info__block-left">
@@ -89,14 +82,18 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
           <AttachedPhotos photo={photo1} description={PHOTOS_DESCRIPTION.photo1} date={PHOTOS_DATES.photo1} />
           <AttachedPhotos photo={photo2} description={PHOTOS_DESCRIPTION.photo2} date={PHOTOS_DATES.photo2} />
         </div>
-        <button className="summary-info__btn-add" onClick={() => getCompany()}>
-          ДОБАВИТЬ ИЗОБРАЖЕНИЕ
-        </button>
+        <button className="summary-info__btn-add">ДОБАВИТЬ ИЗОБРАЖЕНИЕ</button>
       </section>
       <div className="summary-info__hr"></div>
-      <TitleModal />
-      <SummaryInfoModal />
-      <ContactsModal />
+      <Modal is_active={titleModal_is_active} setModalIsActive={setTitleModal_is_active}>
+        <TitleModal setModalIsActive={setTitleModal_is_active} />
+      </Modal>
+      <Modal is_active={summaryInfoModal_is_active} setModalIsActive={setSummaryInfoModal_is_active}>
+        <SummaryInfoModal />
+      </Modal>
+      <Modal is_active={contactsModal_is_active} setModalIsActive={setContactsModal_is_active}>
+        <ContactsModal />
+      </Modal>
       <footer>
         © 1992 - 2020 Честный Агент © Все права защищены. <br />8 (495) 150-21-12{' '}
       </footer>
