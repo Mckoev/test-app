@@ -10,6 +10,7 @@ import TitleModal from '../../../modals/TitleModal'
 import ContactsModal from '../../../modals/ContactsModal'
 import { getCompany, getContacts } from '../../../../api/get_request.js'
 import Modal from '../../../modals/Modal'
+import { addImage } from '../../../../api/api_image'
 
 function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PHOTOS_DESCRIPTION, PHOTOS_DATES }) {
   useEffect(() => {
@@ -32,8 +33,11 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
   // console.log(samstate)
 
   function logger(e) {
-    e.preventDefault()
-    console.log(e)
+    //e.preventDefault()
+    console.log(e.target.files)
+    const path = URL.createObjectURL(e.target.files[0])
+    console.log(path)
+    addImage(path, e.target.files[0].name)
   }
 
   return (
@@ -88,8 +92,8 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
           <AttachedPhotos photo={photo2} description={PHOTOS_DESCRIPTION.photo2} date={PHOTOS_DATES.photo2} />
         </div>
         <label className="summary-info__btn-add">
-          <form encType="multipart/form-data" method="post">
-            <input type="file" accept="image/*,image/jpeg" onChange={(e) => logger(e)} />
+          <form encType="multipart/form-data" method="POST" name="form_image" onChange={(e) => logger(e)}>
+            <input type="file" accept="image/*,image/jpeg/jpg" name="one" />
           </form>
           ДОБАВИТЬ ИЗОБРАЖЕНИЕ
         </label>
