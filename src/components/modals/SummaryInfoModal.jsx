@@ -6,7 +6,7 @@ import './Modal.css'
 function SummaryInfoModal({ setSummaryInfoModal_is_active }) {
   function changeSummaryInfo(e) {
     e.preventDefault()
-    updateSummaryInfo(e.target[0].value, e.target[1].value, e.target[2].value, e.target[3].value)
+    updateSummaryInfo(e.target[0].value, e.target[1].value.split(' '), e.target[2].value, e.target[3].value.split(' '))
     e.target.reset()
     setSummaryInfoModal_is_active(false)
   }

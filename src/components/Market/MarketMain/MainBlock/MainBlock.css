@@ -114,8 +114,8 @@ figure {
 .summary-info__btn-add {
   display: block;
   margin-top: 50px;
-  width: 400px;
-  height: 40px;
+  width: 320px;
+  height: 20px;
   background-image: url('../../../../img/Market/Button-regular.svg');
   padding: 10px 40px 10px 12px;
   background-repeat: no-repeat;
@@ -147,4 +147,8 @@ footer {
   line-height: 26px;
   text-align: center;
   color: #b9b9b9;
+}
+
+input[type='file'] {
+  display: none;
 }

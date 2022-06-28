@@ -9,6 +9,7 @@ import { SUMMARY_INFO_DESCRIPTION } from '../MarketData'
 import { CONTACT_DETAILS } from '../MarketData'
 import { PHOTOS_DESCRIPTION } from '../MarketData'
 import { PHOTOS_DATES } from '../MarketData'
+import { deleteCompany } from '../../../api/deleteCard'
 import './MarketMain.css'
 
 function MarketMain() {
@@ -23,8 +24,8 @@ function MarketMain() {
         </div>
         <div className="header__icons">
           <img src={Linked} alt="Linked"></img>
-          <img src={Arrows} alt="Arrows"></img>
-          <img src={Trash} alt="Trash"></img>
+          <img src={Arrows} alt="Arrows" onClick={() => window.location.reload()}></img>
+          <img src={Trash} alt="Trash" onClick={() => deleteCompany()}></img>
         </div>
       </header>
       <div className="header__hr"></div>

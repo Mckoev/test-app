@@ -28,6 +28,13 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
   const name = useSelector((state) => state.toolkit.full_name)
   const telephone = useSelector((state) => state.toolkit.telephone)
   const email = useSelector((state) => state.toolkit.email)
+  // const samstate = useSelector((state) => state.toolkit)
+  // console.log(samstate)
+
+  function logger(e) {
+    e.preventDefault()
+    console.log(e)
+  }
 
   return (
     <main className="main">
@@ -80,7 +87,12 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
           <AttachedPhotos photo={photo1} description={PHOTOS_DESCRIPTION.photo1} date={PHOTOS_DATES.photo1} />
           <AttachedPhotos photo={photo2} description={PHOTOS_DESCRIPTION.photo2} date={PHOTOS_DATES.photo2} />
         </div>
-        <button className="summary-info__btn-add">ДОБАВИТЬ ИЗОБРАЖЕНИЕ</button>
+        <label className="summary-info__btn-add">
+          <form encType="multipart/form-data" method="post">
+            <input type="file" accept="image/*,image/jpeg" onChange={(e) => logger(e)} />
+          </form>
+          ДОБАВИТЬ ИЗОБРАЖЕНИЕ
+        </label>
       </section>
       <div className="summary-info__hr"></div>
       <Modal is_active={titleModal_is_active} setModalIsActive={setTitleModal_is_active}>
@@ -90,7 +102,7 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
         <SummaryInfoModal setSummaryInfoModal_is_active={setSummaryInfoModal_is_active} />
       </Modal>
       <Modal is_active={contactsModal_is_active} setModalIsActive={setContactsModal_is_active}>
-        <ContactsModal />
+        <ContactsModal setContactsModal_is_active={setContactsModal_is_active} />
       </Modal>
       <footer>
         © 1992 - 2020 Честный Агент © Все права защищены. <br />8 (495) 150-21-12{' '}
