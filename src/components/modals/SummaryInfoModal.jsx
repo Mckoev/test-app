@@ -1,12 +1,12 @@
 import React from 'react'
-import { updateSummaryInfo } from '../../api/patch_title'
+import { updateSummaryInfo } from '../../api/updateCard'
 import { SUMMARY_INFO_DESCRIPTION } from '../market/MarketData'
 import './Modal.css'
 
 function SummaryInfoModal({ setSummaryInfoModal_is_active }) {
   function changeSummaryInfo(e) {
     e.preventDefault()
-    updateSummaryInfo(e.target[0].value, e.target[1].value.split(' '), e.target[2].value, e.target[3].value.split(' '))
+    updateSummaryInfo(e)
     e.target.reset()
     setSummaryInfoModal_is_active(false)
   }
@@ -25,9 +25,9 @@ function SummaryInfoModal({ setSummaryInfoModal_is_active }) {
           <input type="text" size="50" className="summary-info__text-field-value" placeholder="125 от 01.01.2022"></input>
           <input type="text" size="50" className="summary-info__text-field-value" placeholder="ООО"></input>
           <select>
-            <option value="agent">agent</option>
-            <option value="contractor">contractor</option>
-            <option value="agent contractor">agent contractor</option>
+            <option value="agent">Агент</option>
+            <option value="contractor">Подрядчик</option>
+            <option value="agent contractor">Агент Подрядчик</option>
           </select>
         </div>
       </div>

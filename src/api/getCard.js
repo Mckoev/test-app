@@ -1,10 +1,10 @@
-import { token, URL_COMPANIES, URL_CONTACTS } from './api_data'
+import { METHOD, token, URL_COMPANIES, URL_CONTACTS } from './api_data'
 import { store } from '../reduxToolkit'
 import { shortName, full_name, contract, form, type, full_notation, telephone, email } from '../reduxToolkit/toolkitSlice'
 
 export const getCompany = () => {
   let xhr = new XMLHttpRequest()
-  xhr.open('GET', URL_COMPANIES)
+  xhr.open(METHOD.GET, URL_COMPANIES)
   xhr.setRequestHeader('Content-Type', 'application/json')
   xhr.setRequestHeader('Authorization', `Bearer ${token}`)
   xhr.send()
@@ -36,7 +36,7 @@ export const getCompany = () => {
 
 export const getContacts = () => {
   let xhr = new XMLHttpRequest()
-  xhr.open('GET', URL_CONTACTS)
+  xhr.open(METHOD.GET, URL_CONTACTS)
   xhr.setRequestHeader('Content-Type', 'application/json')
   xhr.setRequestHeader('Authorization', `Bearer ${token}`)
   xhr.send()

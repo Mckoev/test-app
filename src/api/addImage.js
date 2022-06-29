@@ -1,16 +1,15 @@
-import { token, URL_IMAGE } from './api_data'
+import { METHOD, token, URL_IMAGE } from './api_data'
+export const addImage = (e) => {
+  e.preventDefault()
+  const file = e.target.files[0]
+  const path = URL.createObjectURL(file)
 
-export const addImage = (file, path) => {
   console.log(file + '   ' + path)
-
-  let img = document.createElement('img')
-  img.src = path
-  document.body.append(img)
 
   let formElement = document.forms.form_image
   let formData = new FormData(formElement)
   let xhr = new XMLHttpRequest()
-  xhr.open('POST', URL_IMAGE)
+  xhr.open(METHOD.POST, URL_IMAGE)
   xhr.setRequestHeader('Content-Type', 'multipart/form-data')
   xhr.setRequestHeader('Authorization', `Bearer ${token}`)
   formData.append(file, path)

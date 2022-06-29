@@ -1,12 +1,12 @@
 import React from 'react'
-import { updateContacts } from '../../api/patch_title'
+import { updateContacts } from '../../api/updateCard'
 import { CONTACT_DETAILS } from '../market/MarketData'
 import './Modal.css'
 
 function ContactsModal({ setContactsModal_is_active }) {
   function changeContacts(e) {
     e.preventDefault()
-    updateContacts(e.target[0].value.split(' '), e.target[1].value, e.target[2].value)
+    updateContacts(e)
     e.target.reset()
     setContactsModal_is_active(false)
   }
@@ -19,9 +19,9 @@ function ContactsModal({ setContactsModal_is_active }) {
           <div className="summary-info__field">{CONTACT_DETAILS.EMAIL}</div>
         </div>
         <div className="summary-info__block-right">
-          <input type="text" size="80" className="summary-info__text-field-value"></input>
-          <input type="text" size="80" className="summary-info__text-field-value"></input>
-          <input type="text" size="80" className="summary-info__text-field-value"></input>
+          <input type="text" size="50" className="summary-info__text-field-value" placeholder="Иванов Иван Иванович"></input>
+          <input type="telephone" size="50" className="summary-info__text-field-value" placeholder="79001234567"></input>
+          <input type="email" size="50" className="summary-info__text-field-value" placeholder="email@mail.ru"></input>
         </div>
       </div>
       <button className="summary-info__btn-change">Отправить</button>

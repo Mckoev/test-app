@@ -8,9 +8,9 @@ import { useSelector } from 'react-redux'
 import SummaryInfoModal from '../../../modals/SummaryInfoModal'
 import TitleModal from '../../../modals/TitleModal'
 import ContactsModal from '../../../modals/ContactsModal'
-import { getCompany, getContacts } from '../../../../api/get_request.js'
+import { getCompany, getContacts } from '../../../../api/getCard.js'
 import Modal from '../../../modals/Modal'
-import { addImage } from '../../../../api/api_image'
+import { addImage } from '../../../../api/addImage'
 
 function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PHOTOS_DESCRIPTION, PHOTOS_DATES }) {
   useEffect(() => {
@@ -31,15 +31,6 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
   const email = useSelector((state) => state.toolkit.email)
   // const samstate = useSelector((state) => state.toolkit)
   // console.log(samstate)
-
-  function logger(e) {
-    e.preventDefault()
-    const file = e.target.files[0]
-    console.log(file)
-    const path = URL.createObjectURL(file)
-    console.log(path)
-    addImage(file, path)
-  }
 
   return (
     <main className="main">
@@ -93,7 +84,7 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
           <AttachedPhotos photo={photo2} description={PHOTOS_DESCRIPTION.photo2} date={PHOTOS_DATES.photo2} />
         </div>
         <label className="summary-info__btn-add">
-          <form encType="multipart/form-data" method="POST" name="form_image" onChange={(e) => logger(e)}>
+          <form encType="multipart/form-data" method="POST" name="form_image" onChange={(e) => addImage(e)}>
             <input type="file" accept="image/*,image/jpeg/jpg" name="one" />
           </form>
           ДОБАВИТЬ ИЗОБРАЖЕНИЕ

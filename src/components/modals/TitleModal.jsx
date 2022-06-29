@@ -1,11 +1,11 @@
 import React from 'react'
 import './Modal.css'
-import { updateTitle } from '../../api/patch_title'
+import { updateTitle } from '../../api/updateCard'
 
 function TitleModal({ setModalIsActive }) {
   function changeTitle(e) {
     e.preventDefault()
-    updateTitle(e.target[0].value)
+    updateTitle(e)
     e.target.reset()
     setModalIsActive(false)
   }
@@ -17,7 +17,7 @@ function TitleModal({ setModalIsActive }) {
           <div className="summary-info__field">Новый заголовок</div>
         </div>
         <div className="summary-info__block-right">
-          <input type="text" size="80" className="summary-info__text-field-value"></input>
+          <input type="text" size="50" className="summary-info__text-field-value"></input>
         </div>
       </div>
       <button className="summary-info__btn-change">Отправить</button>
