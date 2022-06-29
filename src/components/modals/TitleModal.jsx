@@ -17,7 +17,7 @@ function TitleModal({ setModalIsActive }) {
           <div className="summary-info__field">Новый заголовок</div>
         </div>
         <div className="summary-info__block-right">
-          <input type="text" size="50" className="summary-info__text-field-value"></input>
+          <input type="text" className="summary-info__text-field-value" placeholder="Краткое название компании"></input>
         </div>
       </div>
       <button className="summary-info__btn-change">Отправить</button>

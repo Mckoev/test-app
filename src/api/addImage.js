@@ -3,9 +3,6 @@ export const addImage = (e) => {
   e.preventDefault()
   const file = e.target.files[0]
   const path = URL.createObjectURL(file)
-
-  console.log(file + '   ' + path)
-
   let formElement = document.forms.form_image
   let formData = new FormData(formElement)
   let xhr = new XMLHttpRequest()
@@ -13,11 +10,8 @@ export const addImage = (e) => {
   xhr.setRequestHeader('Content-Type', 'multipart/form-data')
   xhr.setRequestHeader('Authorization', `Bearer ${token}`)
   formData.append(file, path)
-  for (let [name, value] of formData) {
-    console.log(`${name} ${value}`)
-  }
   xhr.send(formData)
   xhr.onload = function () {
-    console.log(xhr)
+    console.log(xhr.status, xhr.statusText)
   }
 }
