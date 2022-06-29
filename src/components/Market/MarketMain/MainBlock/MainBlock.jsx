@@ -33,11 +33,12 @@ function MainBlock({ SUMMARY_DATA, SUMMARY_INFO_DESCRIPTION, CONTACT_DETAILS, PH
   // console.log(samstate)
 
   function logger(e) {
-    //e.preventDefault()
-    console.log(e.target.files)
-    const path = URL.createObjectURL(e.target.files[0])
+    e.preventDefault()
+    const file = e.target.files[0]
+    console.log(file)
+    const path = URL.createObjectURL(file)
     console.log(path)
-    addImage(path, e.target.files[0].name)
+    addImage(file, path)
   }
 
   return (

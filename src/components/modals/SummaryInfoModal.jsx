@@ -21,10 +21,14 @@ function SummaryInfoModal({ setSummaryInfoModal_is_active }) {
           <div className="summary-info__field">{SUMMARY_INFO_DESCRIPTION.TYPE}</div>
         </div>
         <div className="summary-info__block-right">
-          <input type="text" size="80" className="summary-info__text-field-value"></input>
-          <input type="text" size="80" className="summary-info__text-field-value"></input>
-          <input type="text" size="80" className="summary-info__text-field-value"></input>
-          <input type="text" size="80" className="summary-info__text-field-value"></input>
+          <input type="text" size="50" className="summary-info__text-field-value" placeholder='OOO "Название компании"'></input>
+          <input type="text" size="50" className="summary-info__text-field-value" placeholder="125 от 01.01.2022"></input>
+          <input type="text" size="50" className="summary-info__text-field-value" placeholder="ООО"></input>
+          <select>
+            <option value="agent">agent</option>
+            <option value="contractor">contractor</option>
+            <option value="agent contractor">agent contractor</option>
+          </select>
         </div>
       </div>
       <button className="summary-info__btn-change">Отправить</button>

@@ -22,7 +22,7 @@ export const updateSummaryInfo = (full_notation_modal, contract_modal, form_moda
   const body = JSON.stringify({
     name: full_notation_modal,
     businessEntity: form_modal,
-    contract: { no: contract_modal[0], issue_date: new Date(contract_modal[1]) },
+    contract: { no: contract_modal[0] },
     type: type_modal,
   })
   console.log(body)
@@ -34,11 +34,7 @@ export const updateSummaryInfo = (full_notation_modal, contract_modal, form_moda
   xhr.onload = function () {
     const answer = JSON.parse(xhr.response)
     console.log(answer)
-    const date = new Date(answer.contract.issue_date)
-    const year = date.getFullYear()
-    const month = date.getMonth() + 1
-    const day = date.getDate()
-    const contract_day = `${answer.contract.no} от ${day}.${month < 10 ? '0' + month : month}.${year}`
+    const contract_day = `${answer.contract.no} от ${contract_modal[2]}`
     const type_answer = answer.type.map(function (item) {
       switch (item) {
         case 'agent':
