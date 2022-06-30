@@ -29,6 +29,10 @@
   border-radius: 20%;
 }
 
+.main__btn-edit:hover {
+  transform: scale(1.5);
+}
+
 .summary-info {
   margin-top: 12px;
   margin-bottom: 32px;

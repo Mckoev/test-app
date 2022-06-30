@@ -3,14 +3,14 @@ import { createSlice } from '@reduxjs/toolkit'
 const toolkitSlice = createSlice({
   name: 'summaryData',
   initialState: {
-    shortName: 'def',
-    full_notation: 'default',
-    contract: 'default',
-    form: 'def',
-    type: 'def',
-    full_name: 'def',
-    telephone: 'def',
-    email: 'def',
+    shortName: 'none',
+    full_notation: 'none',
+    contract: 'none',
+    form: 'none',
+    type: 'none',
+    full_name: 'none',
+    telephone: 'none',
+    email: 'none',
   },
   reducers: {
     shortName(state, action) {

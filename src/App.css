@@ -6,11 +6,3 @@
   font-family: 'Proxima Nova';
   font-style: normal;
 }
-
-.app__block {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-}

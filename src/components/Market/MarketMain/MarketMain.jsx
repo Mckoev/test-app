@@ -9,11 +9,13 @@ import { SUMMARY_INFO_DESCRIPTION } from '../MarketData'
 import { CONTACT_DETAILS } from '../MarketData'
 import { PHOTOS_DESCRIPTION } from '../MarketData'
 import { PHOTOS_DATES } from '../MarketData'
-import { deleteCompany } from '../../../api/deleteCard'
+import { useState } from 'react'
 import './MarketMain.css'
+import Exit from '../../modals/exit/Exit'
 
 function MarketMain() {
   const title = 'К СПИСКУ ЮРИДИЧЕСКИХ ЛИЦ'
+  const [exit_is_active, setExit_is_active] = useState(false)
 
   return (
     <div>
@@ -23,9 +25,9 @@ function MarketMain() {
           <div className="header__title">{title}</div>
         </div>
         <div className="header__icons">
-          <img src={Linked} alt="Linked"></img>
-          <img src={Arrows} alt="Arrows" onClick={() => window.location.reload()}></img>
-          <img src={Trash} alt="Trash" onClick={() => deleteCompany()}></img>
+          <img src={Linked} alt="Linked" className="header__icon"></img>
+          <img src={Arrows} alt="Arrows" className="header__icon" onClick={() => window.location.reload()}></img>
+          <img src={Trash} alt="Trash" className="header__icon" onClick={() => setExit_is_active(true)}></img>
         </div>
       </header>
       <div className="header__hr"></div>
@@ -36,6 +38,7 @@ function MarketMain() {
         PHOTOS_DESCRIPTION={PHOTOS_DESCRIPTION}
         PHOTOS_DATES={PHOTOS_DATES}
       />
+      <Exit is_active={exit_is_active} setModalIsActive={setExit_is_active} />
     </div>
   )
 }

@@ -6,13 +6,8 @@ import Sidebar from './components/sidebar/Sidebar'
 function App() {
   return (
     <div className="App">
-      {/* <div className="app__block"> */}
-      {/* <div className="app_block-in"> */}
       <Sidebar />
       <Market />
-      {/* </div> */}
-      {/* <Exit /> */}
-      {/* </div> */}
     </div>
   )
 }

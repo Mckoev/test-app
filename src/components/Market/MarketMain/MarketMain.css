@@ -36,6 +36,16 @@
   margin-right: 40px;
 }
 
+.header__icon:hover {
+  transform: scale(1.5);
+}
+
+.header__icon:active {
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+  border-radius: 20%;
+}
+
 .header__hr {
   width: 1168px;
   height: 0px;
